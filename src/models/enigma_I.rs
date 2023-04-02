@@ -9,6 +9,11 @@ impl EnigmaMachine {
             rotors: vec![rotor_1(), rotor_2(), rotor_3()],
         }
     }
+    pub fn set_plugboard(mut self, input: char, output: char) -> Self {
+        //should not allow to set an input char equal to an output char
+        self.plugboard.insert(input, output);
+        self
+    }
 }
 
 fn rotor_1() -> HashMap<char, char> {
